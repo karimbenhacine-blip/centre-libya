@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>مركز ليبيا للمطابخ والديكور</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#d35400;--bg:#f7f7f8;--card:#ffffff;--muted:#666}
+    *{box-sizing:border-box}
+    body{font-family: 'Cairo', sans-serif;margin:0;background:var(--bg);color:#222}
+    header{background:linear-gradient(90deg, rgba(211,84,0,0.08), rgba(211,84,0,0.04));padding:28px 16px}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{width:56px;height:56px;object-fit:cover;border-radius:8px}
+    .logo h1{margin:0;font-size:20px}
+    nav a{margin-left:14px;color:#222;text-decoration:none;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;padding:40px 0}
+    .hero h2{font-size:30px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:30px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(20,20,30,0.04)}
+    .card h3{margin:0 0 8px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:18px}
+    .gallery img{width:100%;height:130px;object-fit:cover;border-radius:8px}
+
+    .contact{background:linear-gradient(180deg,rgba(0,0,0,0.03),transparent);padding:22px;border-radius:12px}
+    form{display:grid;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e4e4e7;font-size:15px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+    footer{padding:18px 0;color:var(--muted);font-size:14px;text-align:center;margin-top:36px}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container top">
+      <div class="logo">
+        <img src="https://via.placeholder.com/128?text=شعار" alt="شعار المركز">
+        <div>
+          <h1>مركز ليبيا للمطابخ والديكور</h1>
+          <div style="color:var(--muted);font-size:13px">تصاميم، تصنيع، وتركيب</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">خدماتنا</a>
+        <a href="#projects">أعمالنا</a>
+        <a href="#contact">اتصل بنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h2>أجمل المطابخ وقطع الديكور المصممة حسب ذوقك</h2>
+        <p>نصمم مطابخ عملية وجميلة، وننفذ أعمال الديكور الداخلي مع التركيز على الجودة والتفاصيل. من الاستشارة إلى التركيب الكامل.</p>
+        <a class="btn" href="#contact">اطلب عرض سعر</a>
+
+        <div class="cards">
+          <div class="card">
+            <h3>تصميم مخصص</h3>
+            <p style="color:var(--muted);margin:6px 0 0">تصاميم ثلاثية الأبعاد تناسب مساحة منزلك ومواصفاتك.</p>
+          </div>
+          <div class="card">
+            <h3>تصنيع عالي الجودة</h3>
+            <p style="color:var(--muted);margin:6px 0 0">مواد متينة وتشطيب احترافي يضمن عمر طويل للمطبخ.</p>
+          </div>
+          <div class="card">
+            <h3>تركيب وديكور</h3>
+            <p style="color:var(--muted);margin:6px 0 0">فريق تركيب محترف يهتم بالتفاصيل والدقة في التنفيذ.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="contact" id="contact">
+        <h3 style="margin-top:0">اتصل بنا الآن</h3>
+        <p style="margin:6px 0 12px;color:var(--muted);font-size:14px">هاتف: <strong>+218 9XX XXX XXX</strong><br>البريد الإلكتروني: <strong>info@libyakitchens.ly</strong></p>
+        <form onsubmit="sendMessage(event)">
+          <div class="grid-2">
+            <input type="text" id="name" placeholder="الاسم" required>
+            <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+          </div>
+          <input type="email" id="email" placeholder="البريد الإلكتروني (اختياري)">
+          <textarea id="message" rows="4" placeholder="نبذة عن المشروع أو سؤالك" required></textarea>
+          <button class="btn" type="submit">إرسال</button>
+          <div id="result" style="font-size:13px;color:var(--muted);margin-top:6px"></div>
+        </form>
+      </aside>
+    </section>
+
+    <section id="services">
+      <h2 style="font-size:22px;margin:18px 0">خدماتنا</h2>
+      <div class="cards">
+        <div class="card"><h3>مطابخ مودرن</h3><p style="color:var(--muted)">تصاميم عصرية مع مساحات تخزين ذكية.</p></div>
+        <div class="card"><h3>مطابخ تقليدية</h3><p style="color:var(--muted)">طابع دافئ ولمسات تقليدية راقية.</p></div>
+        <div class="card"><h3>ديكور داخلي</h3><p style="color:var(--muted)">تنسيق ألوان، إضاءات، وترتيب أثاث.</p></div>
+        <div class="card"><h3>خدمات ما بعد البيع</h3><p style="color:var(--muted)">ضمان وصيانة للمنتجات المنفذة.</p></div>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:20px">
+      <h2 style="font-size:22px;margin:8px 0">نماذج من أعمالنا</h2>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/600x400?text=مشروع+1" alt="مشروع 1">
+        <img src="https://via.placeholder.com/600x400?text=مشروع+2" alt="مشروع 2">
+        <img src="https://via.placeholder.com/600x400?text=مشروع+3" alt="مشروع 3">
+        <img src="https://via.placeholder.com/600x400?text=مشروع+4" alt="مشروع 4">
+      </div>
+    </section>
+
+    <section style="margin-top:28px;display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+      <div style="flex:1;min-width:220px;background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(20,20,30,0.04)">
+        <h3 style="margin-top:0">لماذا تختارنا؟</h3>
+        <ul style="color:var(--muted);padding-left:18px;margin:8px 0">
+          <li>خبرة طويلة في تصنيع المطابخ</li>
+          <li>خامات محلية ومستوردة بجودة عالية</li>
+          <li>التزام بالمواعيد والتسليم حسب الاتفاق</li>
+        </ul>
+      </div>
+      <div style="min-width:220px;text-align:center">
+        <p style="margin:0;color:var(--muted)">ساعات العمل: السبت - الخميس 9ص - 6م</p>
+        <p style="margin:6px 0 0"><strong>العنوان:</strong> شارع مثال، طرابلس، ليبيا</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> مركز ليبيا للمطابخ والديكور — كل الحقوق محفوظة
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function sendMessage(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const result = document.getElementById('result');
+      if(!name||!phone||!message){ result.textContent='الرجاء تعبئة الحقول المطلوبة.'; return }
+      // ملاحظة: هذا النموذج محلي فقط. لاستلام الرسائل فعلياً اربط النموذج بخدمة استضافة أو بريد.
+      result.textContent = 'شكرًا! تم إرسال طلبك (محليًا). للتفعيل، اربط النموذج بخدمة استضافة أو بريد.';
+      setTimeout(()=>{result.textContent=''},5000);
+    }
+  </script>
+</body>
+</html>
